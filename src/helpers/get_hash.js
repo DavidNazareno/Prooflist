@@ -1,6 +1,8 @@
-import Web3 from "web3"
-const getHash =(data)=>{
-    return Web3.utils.keccak256(data);
-}
+
+import keccak256 from "keccak256";
+const getHash = (data) => {
+  
+  return keccak256(data);
+};
 
 export default getHash;

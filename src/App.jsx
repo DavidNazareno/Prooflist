@@ -7,7 +7,7 @@ import { CodeBlock, monokai } from "react-code-blocks";
 function App() {
   const [count, setCount] = useState(0);
   const [wallets, setWallets] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState("0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2,0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db,0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB,0x617F2E2fD72FD9D5503197092aC168c91465E7f2");
   const [merkle, setMerkle] = useState(null);
   const [dataGetHexProof, setDataGetHexProof] = useState(null);
   const [hexProof, setHexProof] = useState(null);
@@ -30,6 +30,8 @@ function App() {
     const result = getHexProof(merkle.merkleTree, dataGetHexProof);
     setHexProof(result);
   };
+
+  //0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2,0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db,0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB,0x617F2E2fD72FD9D5503197092aC168c91465E7f2
 
   return (
     <div className="App container mx-auto flex flex-col justify-center h-full">
@@ -64,7 +66,7 @@ function App() {
               BLOB: {merkle && JSON.stringify(merkle.root)}
             </span>
             <br />
-            <span className="text-sm">ROOT: 0x{merkle && merkle.root}</span>
+            <span className="text-sm">ROOT: {merkle && merkle.root}</span>
           </div>
         </div>
         <div className="flex flex-col p-4 gap-2 box  row-span-2 col-span-2 md:col-span-1 bg-secondary">
