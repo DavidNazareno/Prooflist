@@ -13,6 +13,7 @@
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "buffer": "^6.0.3",
     "events": "^3.3.0",
+    "gh-pages": "^4.0.0",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.9",
     "process": "^0.11.10",

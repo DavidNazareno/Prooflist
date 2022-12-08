@@ -1,21 +1,20 @@
 import { useState } from "react";
-import ArrowRight from "./assets/arrow-right.svg";
+import IconArrowRight from "./assets/arrow-right.svg";
 import generate from "./controller/generate";
 import getHexProof from "./controller/get-hex-proof";
 import { CodeBlock, monokai } from "react-code-blocks";
 import TextArea from "./components/textarea/TextArea";
 import Input from "./components/input/Input";
 import Logo from "./components/logo/Logo";
+import IconGithub from "./assets/github.svg";
 
 function App() {
-
   const [data, setData] = useState("");
   const [merkle, setMerkle] = useState(null);
   const [dataGetHexProof, setDataGetHexProof] = useState("");
   const [hexProof, setHexProof] = useState(null);
 
   const handleChangeData = (data) => {
-    console.log(data);
     setData(data);
   };
 
@@ -35,7 +34,16 @@ function App() {
 
   return (
     <div className="App container mx-auto flex flex-col gap-6 py-10 justify-center h-full">
-      <Logo />
+      <div className="flex w-full justify-between items-center">
+        <Logo />
+        <a href="https://github.com/DavidNazareno" target="_blank">
+          {" "}
+          <img
+            className="w-12 transition-all  hover:border-4 border-primary box-border rounded-full"
+            src={IconGithub}
+          />
+        </a>
+      </div>
 
       <div className="grid overflow-hidden grid-cols-1   md:grid-cols-3 gap-2 ">
         <div className="flex gap-4 flex-col box p-4 box-border col-span-2 bg-secondary">
@@ -45,7 +53,7 @@ function App() {
               onClick={generateMerkle}
               className="bg-primary p-2 rounded-sm"
             >
-              <img className="w-6 block mx-auto" src={ArrowRight} />
+              <img className="w-6 block mx-auto" src={IconArrowRight} />
             </button>
           </div>
 
@@ -74,7 +82,7 @@ function App() {
               onClick={generateProof}
               className="bg-primary p-2 rounded-sm"
             >
-              <img className="w-6 block mx-auto" src={ArrowRight} />
+              <img className="w-6 block mx-auto" src={IconArrowRight} />
             </button>
           </div>
           <div className="block w-full overflow-auto relative bg-background  rounded-sm p-2   h-full">
@@ -100,7 +108,6 @@ modifier validateAddress(bytes32[] calldata _merkleProof,bytes32 _merkleRoot) {
         showLineNumbers={false}
         theme={monokai}
       />
-    
     </div>
   );
 }
