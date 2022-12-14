@@ -2,7 +2,7 @@
  
  React,Vite
  
- Execute 
+ Execute
+ --------------
  npm i
- --------
  npm run dev
